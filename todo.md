@@ -1,15 +1,10 @@
 # To-do (future wishlist)
 
 ## Ore processing chain
-- [x] Foundry for liquid metal (steam-powered; ore or bar -> 100 units molten copper, zinc or iron in its tank; built from 20 stone blocks + 12 iron plates at the Crafting Table; numbers are guesses)
-- [ ] Fireproof bricks: a heat-resistant brick (made from clay or similar), to replace the stone blocks in the Foundry's recipe
-- [x] Bar Caster: casts molten metal into bars (100 units per bar; fluid pipes in, one output slot; built from 10 stone blocks + 6 iron plates at the Crafting Table; numbers are guesses)
-- [x] Liquid alloyer (mix liquid metals into alloys)
-- [x] Steel creation (steel is the material for the Industrial tier): coal or wood -> coke in the Steam Furnace, coke -> molten carbon in the Foundry, molten iron + carbon -> molten steel in the Liquid Alloyer, cast into Steel Bars (numbers are guesses)
 - [ ] Coke Oven: a machine with the same two coke recipes (coal and wood) at half the materials per coke
+- [ ] More clay uses: more Mixing Vat recipes (e.g. cement/concrete from sand, stone dust or similar). (Fireproof bricks and the Brick Block are done.)
 
 ## Biomes
-- [x] Desert biom
 - [ ] Snow biome
 - [ ] Volcano biome
 - [ ] Underground biomes (idea, not decided): biomes below the surface, e.g. caves with their own look/resources, rather than only surface ones
@@ -17,18 +12,12 @@
 - [ ] Geothermal vents: a cave feature (and later part of the volcano biome) that gives free heat or steam when you build a boiler over it.
 - [ ] Save biome locations: a saved world doesn't remember where its desert is (`World.desert_span` is only filled in on the run that generated it), so any new biome needs its location saved too
 
-## Mechanics workbench
-A workbench built with brass, used to make components and advanced automation machines.
-
-- [x] The workbench itself (item, object, art; built at the Crafting Table from 6 brass plates, 2 brass bars, 8 wood; manual)
-- [x] Basic Drill recipe (3 brass cogs, 6 iron plates, 4 copper plates, 2 steam pipes; amounts are guesses)
-- [x] Brass cog (2 brass plates)
-
 ## Industrial tier
 The third tier of machines, made of steel. Uses the existing unused steel machine sprites (the steel press and steel sheet bender art has no object, item or recipe yet); the crafting table has none.
 
 - [ ] Industrial Press
 - [ ] Industrial Sheet Bender
+- [ ] Industrial Mixing Vat: a steel upgrade of the Mixing Vat (faster, bigger tank, more recipes)
 - [ ] Advanced Crafting Table
   - Needs new art: there is no steel crafting table sprite yet.
   - [ ] Advanced filter pipe: a multi-item filter (several item slots), to go with the single-item Basic Filter Tube
@@ -54,4 +43,4 @@ The third tier of machines, made of steel. Uses the existing unused steel machin
 
 ## World visuals
 - [ ] Parallax background: a distant-hills texture behind the world that scrolls slower than the terrain
-- [x] Steam pipe art (round pipes with slim collars, redrawn so they differ from the fluid pipes and item tubes)
+- [ ] Partial fluid fill in pipes (visual only): instead of fading the fluid's opacity, show each pipe piece partly filled. Spread a network's fluid over its pipes by gravity (lowest pieces first; a horizontal run fills along its bottom), give each piece its own 0-100% level, and have the fill shader clip to that height (a surface line in horizontal pieces, filling from the bottom in vertical ones). Also needs the machine stub pieces handled and some smoothing so the fill doesn't jitter. Behaviour stays the same (real height-based flow would be a much bigger fluid rewrite, not planned).
